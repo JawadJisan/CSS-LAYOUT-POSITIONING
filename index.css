@@ -1,0 +1,29 @@
+/* 1. Block */
+.block-element {
+  display: block;
+}
+
+/* 2. Inline */
+.inline-element {
+  display: inline;
+}
+
+/* 3. INline Block */
+.inline-block-element {
+  display: inline-block;
+}
+
+/* 4. None */
+.test {
+  display: none;
+}
+
+/* 5. FLEX - Modern layout system */
+.flex-container {
+  display: flex;
+}
+
+/* 6. GRID- 2D layout System */
+.grid-container {
+  display: grid;
+}
