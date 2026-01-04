@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        height: 2000px;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+      }
+
+      .position-example {
+        border: 2px solid #34495e;
+        padding: 20px;
+        margin: 30px 0;
+        background: #ecf0f1;
+        position: relative;
+        min-height: 200px;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+
+      /* Relative Positioning */
+      .relative-box {
+        position: relative;
+        background: #3498db;
+      }
+
+      .relative-moved {
+        position: relative;
+        background: #e74c3c;
+        top: 20px;
+        left: 30px;
+      }
+
+      /* Absolute Positioning */
+      .parent-relative {
+        position: relative;
+        height: 200px;
+        background: #bdc3c7;
+        margin: 20px 0;
+      }
+
+      .absolute-box {
+        position: absolute;
+        background: #9b59b6;
+        width: 80px;
+        height: 80px;
+      }
+
+      .top-left {
+        top: 10px;
+        left: 10px;
+      }
+      .top-right {
+        top: 10px;
+        right: 10px;
+      }
+      .bottom-left {
+        bottom: 10px;
+        left: 10px;
+      }
+      .bottom-right {
+        bottom: 10px;
+        right: 10px;
+      }
+      .center {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* Fixed Positioning */
+      .fixed-box {
+        position: fixed;
+        background: #e67e22;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Sticky Positioning */
+      .sticky-header {
+        position: sticky;
+        top: 0;
+        background: #2c3e50;
+        color: white;
+        padding: 15px;
+        z-index: 100;
+      }
+
+      /* Z-Index Example */
+      .z-index-example {
+        position: relative;
+        height: 150px;
+        margin: 30px 0;
+      }
+
+      .z-box {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+      }
+
+      .z-1 {
+        background: #3498db;
+        z-index: 1;
+        left: 20px;
+        top: 20px;
+      }
+      .z-2 {
+        background: #2ecc71;
+        z-index: 2;
+        left: 40px;
+        top: 40px;
+      }
+      .z-3 {
+        background: #e74c3c;
+        z-index: 3;
+        left: 60px;
+        top: 60px;
+      }
+      .z-4 {
+        background: #f39c12;
+        z-index: 4;
+        left: 80px;
+        top: 80px;
+      }
+
+      /* Overlay Example */
+      .overlay-container {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        background: #1abc9c;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .overlay-container:hover .overlay {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🎯 CSS Positioning & Z-Index</h1>
+
+    <!-- Sticky Header -->
+    <div class="sticky-header">
+      🚀 Sticky Navigation Bar (Scroll down to see effect)
+    </div>
+
+    <!-- Relative Positioning -->
+    <h2>1. Relative Positioning</h2>
+    <div class="position-example">
+      <p>Normal position:</p>
+      <div class="box relative-box">Box 1</div>
+
+      <p>Moved with relative positioning:</p>
+      <div class="box relative-moved">Box 2</div>
+      <p>Note: Space is preserved where Box 2 would normally be.</p>
+    </div>
+
+    <!-- Absolute Positioning -->
+    <h2>2. Absolute Positioning (Inside Relative Parent)</h2>
+    <div class="parent-relative">
+      <div class="absolute-box top-left">TL</div>
+      <div class="absolute-box top-right">TR</div>
+      <div class="absolute-box center">Center</div>
+      <div class="absolute-box bottom-left">BL</div>
+      <div class="absolute-box bottom-right">BR</div>
+    </div>
+
+    <!-- Z-Index -->
+    <h2>3. Z-Index (Stacking Order)</h2>
+    <div class="z-index-example">
+      <div class="z-box z-1">Z-Index 1</div>
+      <div class="z-box z-2">Z-Index 2</div>
+      <div class="z-box z-3">Z-Index 3</div>
+      <div class="z-box z-4">Z-Index 4</div>
+    </div>
+    <p>Higher z-index appears on top.</p>
+
+    <!-- Overlay Example -->
+    <h2>4. Image Overlay Effect</h2>
+    <div class="overlay-container">
+      <h3>Hover over me!</h3>
+      <div class="overlay">
+        <h3>Overlay Content</h3>
+      </div>
+    </div>
+
+    <!-- Fixed Positioning -->
+    <div class="fixed-box" title="Scroll to see fixed position">🔝</div>
+
+    <!-- Positioning Values Summary -->
+    <h2 style="margin-top: 100px">📝 Positioning Values Summary</h2>
+    <table border="1" style="width: 100%; border-collapse: collapse">
+      <thead>
+        <tr>
+          <th>Position</th>
+          <th>Relative To</th>
+          <th>In Flow?</th>
+          <th>Use Case</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>static</code></td>
+          <td>Normal flow</td>
+          <td>Yes</td>
+          <td>Default behavior</td>
+        </tr>
+        <tr>
+          <td><code>relative</code></td>
+          <td>Itself</td>
+          <td>Yes</td>
+          <td>Minor adjustments</td>
+        </tr>
+        <tr>
+          <td><code>absolute</code></td>
+          <td>Nearest positioned ancestor</td>
+          <td>No</td>
+          <td>Tooltips, modals</td>
+        </tr>
+        <tr>
+          <td><code>fixed</code></td>
+          <td>Viewport</td>
+          <td>No</td>
+          <td>Navigation, chat buttons</td>
+        </tr>
+        <tr>
+          <td><code>sticky</code></td>
+          <td>Scroll position</td>
+          <td>Yes</td>
+          <td>Sticky headers, table headers</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

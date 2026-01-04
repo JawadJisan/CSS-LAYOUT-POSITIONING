@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* CSS Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      /* Header */
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+
+      .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Main Layout */
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      /* Main Content */
+      .main-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .blog-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .blog-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .blog-content {
+        padding: 20px;
+      }
+
+      .blog-title {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: #2c3e50;
+      }
+
+      .blog-meta {
+        color: #7f8c8d;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        background: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        height: fit-content;
+        position: sticky;
+        top: 100px;
+      }
+
+      .sidebar h3 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #3498db;
+      }
+
+      .sidebar-widget {
+        margin-bottom: 30px;
+      }
+
+      .categories li {
+        list-style: none;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .categories li:last-child {
+        border-bottom: none;
+      }
+
+      /* Newsletter Form */
+      .newsletter-form {
+        background: #3498db;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .newsletter-form input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+      }
+
+      .newsletter-form button {
+        width: 100%;
+        padding: 10px;
+        background: #2c3e50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .newsletter-form button:hover {
+        background: #34495e;
+      }
+
+      /* Footer */
+      .footer {
+        background: #2c3e50;
+        color: white;
+        padding: 40px 0;
+        margin-top: 60px;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-section h4 {
+        margin-bottom: 20px;
+        color: #3498db;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          position: static;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-container {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .nav-links {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .main-content {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="nav-container">
+        <div class="logo">📝 Tech Blog</div>
+        <nav class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">Articles</a>
+          <a href="#">Tutorials</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <!-- Main Articles -->
+      <main class="main-content">
+        <!-- Article 1 -->
+        <article class="blog-card">
+          <img
+            src="https://picsum.photos/400/200"
+            alt="CSS Grid"
+            class="blog-img"
+          />
+          <div class="blog-content">
+            <h2 class="blog-title">Mastering CSS Grid Layout</h2>
+            <p class="blog-meta">By John Doe • Jan 15, 2024 • 5 min read</p>
+            <p>
+              Learn how to create complex layouts with CSS Grid. This
+              comprehensive guide covers everything from basic grids to advanced
+              techniques.
+            </p>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="blog-card">
+          <img
+            src="https://picsum.photos/400/201"
+            alt="Flexbox"
+            class="blog-img"
+          />
+          <div class="blog-content">
+            <h2 class="blog-title">Flexbox for Responsive Design</h2>
+            <p class="blog-meta">By Jane Smith • Jan 12, 2024 • 4 min read</p>
+            <p>
+              Discover how Flexbox can simplify your responsive design workflow
+              and create flexible layouts that work on all devices.
+            </p>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="blog-card">
+          <img
+            src="https://picsum.photos/400/202"
+            alt="CSS Animations"
+            class="blog-img"
+          />
+          <div class="blog-content">
+            <h2 class="blog-title">CSS Animations Made Easy</h2>
+            <p class="blog-meta">By Alex Johnson • Jan 10, 2024 • 6 min read</p>
+            <p>
+              Add life to your websites with CSS animations. Learn transition,
+              transform, and keyframe animations with practical examples.
+            </p>
+          </div>
+        </article>
+
+        <!-- Article 4 -->
+        <article class="blog-card">
+          <img
+            src="https://picsum.photos/400/203"
+            alt="Responsive Design"
+            class="blog-img"
+          />
+          <div class="blog-content">
+            <h2 class="blog-title">Mobile-First Responsive Design</h2>
+            <p class="blog-meta">
+              By Sarah Williams • Jan 8, 2024 • 7 min read
+            </p>
+            <p>
+              Build websites that look great on all devices using mobile-first
+              approach and modern CSS techniques.
+            </p>
+          </div>
+        </article>
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <!-- About Widget -->
+        <div class="sidebar-widget">
+          <h3>About Me</h3>
+          <p>
+            Front-end developer passionate about CSS, JavaScript, and creating
+            beautiful user interfaces.
+          </p>
+        </div>
+
+        <!-- Categories Widget -->
+        <div class="sidebar-widget">
+          <h3>Categories</h3>
+          <ul class="categories">
+            <li>HTML & CSS</li>
+            <li>JavaScript</li>
+            <li>Web Design</li>
+            <li>Responsive Design</li>
+            <li>CSS Frameworks</li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Widget -->
+        <div class="sidebar-widget">
+          <div class="newsletter-form">
+            <h3>Newsletter</h3>
+            <p>Subscribe to get weekly web development tips!</p>
+            <input type="email" placeholder="Your email address" />
+            <button>Subscribe</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h4>Tech Blog</h4>
+          <p>
+            Sharing knowledge about web development, design, and programming.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <p>Home</p>
+          <p>Articles</p>
+          <p>Tutorials</p>
+          <p>Contact</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <p>Twitter</p>
+          <p>GitHub</p>
+          <p>LinkedIn</p>
+          <p>YouTube</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
